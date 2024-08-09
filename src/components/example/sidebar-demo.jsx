@@ -11,36 +11,47 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import CoverDemo from "./cover-demo";
-import BentoGridDemo from "./bento-grid-demo";
-import ImagesSliderDemo from "./images-slider-demo";
 
 export default function SidebarDemo({children}) {
   const links = [
     {
       label: "Dashboard",
-      href: "#",
+      href: "/",
       icon: (
         <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Profile",
-      href: "#",
+      label: "Credential",
+      href: "/credential",
       icon: (
         <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Settings",
-      href: "#",
+      label: "DAO",
+      href: "/dao",
       icon: (
         <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Logout",
-      href: "#",
+      label: "Health",
+      href: "/health",
+      icon: (
+        <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Prescript",
+      href: "/prescript",
+      icon: (
+        <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Telehealth",
+      href: "/telehealth",
       icon: (
         <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
