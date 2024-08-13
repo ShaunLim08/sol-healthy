@@ -12,7 +12,7 @@ export const metadata = {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "/healthify.jpeg",
+      url: "/healthify.png",
     },
   ],
 };

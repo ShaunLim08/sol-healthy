@@ -11,7 +11,7 @@ export async function POST(req) {
 		},
 		body: JSON.stringify({
 			wallet_address: wallet_address, // user wallet address
-			contract_address: "0xE7749981B2D6250371142C9A2076033B8aF4fbFb",
+			contract_address: process.env.MASCHAIN_TOKEN_CONTRACT,
 		}),
 	});
 

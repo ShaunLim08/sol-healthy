@@ -13,7 +13,7 @@ export async function POST(req) {
 			wallet_address: walletAddress, // user's wallet address (you'll need to get this from the authenticated user)
 			to: "0xD001570E75b31f6764cCa245874a2fb13DA24eab",
 			amount: amount,
-			contract_address: "0xE7749981B2D6250371142C9A2076033B8aF4fbFb",
+			contract_address: process.env.MASCHAIN_TOKEN_CONTRACT,
 			callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/maschain/callback/fund-project`,
 		}),
 	});

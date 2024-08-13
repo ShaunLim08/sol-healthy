@@ -28,32 +28,28 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <Skeleton />,
+    title: "Health Data Exchange",
+    description: "Exchange patient data SECURELY across different hospitals",
+    header: <img src="https://img.freepik.com/premium-vector/data-transfer_543534-249.jpg" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl  object-cover" />,
     className: "md:col-span-2",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
+    title: "Veryfying Medicine",
+    description: "Verifying Medicine Integrity, esure no counterfeit products",
+    header: <img src="https://pink.citeline.com/-/media/editorial/pink-sheet/2021/01/ps2101_magnifyingglass_pills_1324901444_1200.jpg?rev=8d304ab0c80f4d50a17ac566f01e071f&w=790&hash=23B0A88D28E79C098B18CAF64BFC042A"
+    className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl  object-cover" />,
     className: "md:col-span-1",
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
+    title: "TeleHealth",
+    description: "Online pharmaceutical prescriptions and prescription management",
+    header: <img src="https://imageio.forbes.com/specials-images/imageserve/63b2d5036b97606178584f56/Unrecognisable-African-American-woman-using-digital-device-to-get-advice-from-GP-/960x0.jpg?height=473&width=711&fit=bounds" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl  object-cover" />,
     className: "md:col-span-1",
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Power of Communication",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
+    title: "Patient Support Communities",
+    description:"DAOs to share experiences, advice, and resources to each other",
+    header: <img src="https://media.istockphoto.com/id/1334677692/vector/video-conference-illustration-people-talking-by-computer-programm-screen-with-colleagues.jpg?s=612x612&w=0&k=20&c=iBNgBkQewJ_rBB4xzCtgdYd0beXlqijfvApE2lDbcYY=" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl  object-cover" />,
     className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
 ];

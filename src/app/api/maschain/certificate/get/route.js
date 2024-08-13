@@ -2,7 +2,7 @@ export async function GET() {
 	try {
 		
 		const res = await fetch(
-			`${process.env.MASCHAIN_API_URL}/api/wallet/wallet/0xd001570e75b31f6764cca245874a2fb13da24eab`,
+			`${process.env.MASCHAIN_API_URL}/api/certificate/get-certificate`,
 			{
 				method: "GET",
 				headers: {

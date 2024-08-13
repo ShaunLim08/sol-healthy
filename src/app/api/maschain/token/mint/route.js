@@ -12,7 +12,7 @@ export async function POST(req) {
 			wallet_address: "0x62aB6f2aE657186dB838A5FAbe62DcbC51914384", // This should be the admin wallet that mints tokens
 			to: walletAddress, // The user's wallet address
 			amount: amount,
-			contract_address: "0xE7749981B2D6250371142C9A2076033B8aF4fbFb",
+			contract_address: process.env.MASCHAIN_TOKEN_CONTRACT,
 			callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/maschain/callback/top-up`,
 		}),
 	});
