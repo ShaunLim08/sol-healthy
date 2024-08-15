@@ -35,7 +35,7 @@ const items = [
   },
   {
     title: "Veryfying Medicine",
-    description: "Verifying Medicine Integrity, esure no counterfeit products",
+    description: "Verifying Medicine Integrity, ensure no counterfeit products",
     header: <img src="https://pink.citeline.com/-/media/editorial/pink-sheet/2021/01/ps2101_magnifyingglass_pills_1324901444_1200.jpg?rev=8d304ab0c80f4d50a17ac566f01e071f&w=790&hash=23B0A88D28E79C098B18CAF64BFC042A"
     className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl  object-cover" />,
     className: "md:col-span-1",
