@@ -10,7 +10,7 @@ export default function Health() {
         <SidebarDemo>
         <div className="flex flex-1">
         <div className="rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1">
-            <HeroParallaxDemo />
+            <p>AI Chatbot + Prescription</p>
         </div>
                 </div>
         </SidebarDemo>

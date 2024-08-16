@@ -10,7 +10,7 @@ export default function Telehealth() {
         <SidebarDemo>
         <div className="flex flex-1">
         <div className="rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1">
-            <HeroParallaxDemo />
+            <h>AI Chatbot + Prescription Management</h>
         </div>
                 </div>
         </SidebarDemo>
