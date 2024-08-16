@@ -39,37 +39,37 @@ export default function FeaturesSectionDemo() {
   );
 }
 
-// Example data for the medicines
+
 const grid = [
   {
     medicinename: "Aspirin",
     batchnumber: "BATCH1234",
     supplier: "Supplier A",
     status: "Verified",
-    imageUrl: "/images/aspirin.jpg", // Update with the actual image path
+    imageUrl: "https://rootofscience.com/blog/wp-content/uploads/2023/03/ubat-aspirin.jpg", 
   },
   {
     medicinename: "Ibuprofen",
     batchnumber: "BATCH5678",
     supplier: "Supplier B",
     status: "Pending Verification",
-    imageUrl: "/images/ibuprofen.jpg", // Update with the actual image path
+    imageUrl: "https://5.imimg.com/data5/SELLER/Default/2023/6/319597573/MH/NE/SR/135658020/ibuprofen-400-mg-bp-tablets.jpg", 
   },
   {
     medicinename: "Paracetamol",
     batchnumber: "BATCH9012",
     supplier: "Supplier C",
     status: "Counterfeit Detected",
-    imageUrl: "/images/paracetamol.jpg", // Update with the actual image path
+    imageUrl: "https://guardian.com.my/media/catalog/product/1/2/121115012_axcel_pcm_500mg_tab_10sx10.jpg?auto=webp&format=pjpg&width=640&height=800&fit=cover",
   },
   {
     medicinename: "Amoxicillin",
     batchnumber: "BATCH3456",
     supplier: "Supplier D",
     status: "Verified",
-    imageUrl: "/images/amoxicillin.jpg", // Update with the actual image path
-  },
-];
+    imageUrl: "https://5.imimg.com/data5/ANDROID/Default/2023/4/302037696/HU/JI/VN/116627000/product-jpeg-500x500.jpg", 
+  }
+  ];
 
 export const Grid = ({ pattern, size }) => {
   const p = pattern ?? [
