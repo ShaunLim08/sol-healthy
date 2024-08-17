@@ -132,6 +132,7 @@ export default function ExpandableCardDemo() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
+                  type="button"
                   onClick={() => sendTip("5")}
                   // href={active.ctaLink}
                   // target="_blank"
@@ -230,7 +231,7 @@ const cards = [
     title: "Shaun Lim",
     src: "/flumeds.jpeg",
     ctaText: "Tip HEAL",
-    ctaLink: "https://ui.aceternity.com/templates",
+    // ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         (<p>These are the best flu medicines that you can take to get rid of the flu.
@@ -244,7 +245,7 @@ const cards = [
     title: "UM Specialist Center Experience",
     src: "/umsc.jpeg",
     ctaText: "Tip HEAL",
-    ctaLink: "https://ui.aceternity.com/templates",
+    // ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         (<p>UM Specialist Centre provided excellent care during my two episodes of admission for the surgical removal of a shawarma under general anesthesia. 
@@ -260,7 +261,7 @@ const cards = [
     title: "Which Health Insurance to Choose?",
     src: "/insurance.jpg",
     ctaText: "Tip HEAL",
-    ctaLink: "https://ui.aceternity.com/templates",
+    // ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         (<p>If you are reading this, chances are you know the importance of having life insurance. 
@@ -276,7 +277,7 @@ const cards = [
     title: "Doctor Recommendation for Cancer Treatment",
     src: "/doctor.jpg",
     ctaText: "Tip HEAL",
-    ctaLink: "https://ui.aceternity.com/templates",
+    // ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         (<p>Dr Yudhishthra from <b>Hospital Serdang</b> is a very good doctor. He is very patient and listens to your problems. 

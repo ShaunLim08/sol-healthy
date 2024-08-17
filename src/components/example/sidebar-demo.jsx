@@ -6,6 +6,7 @@ import {
   IconBrandTabler,
   IconBuildingCommunity,
   IconDatabase,
+  IconLogs,
   IconMedicineSyrup,
   IconPhoneCall,
   IconSettings,
@@ -28,14 +29,14 @@ export default function SidebarDemo({children}) {
       ),
     },
     {
-      label: "Data Exchange",
+      label: "DEX",
       href: "/credential",
       icon: (
         <IconDatabase className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Healthcare Support Community",
+      label: "Community",
       href: "/dao",
       icon: (
         <IconBuildingCommunity className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
@@ -49,10 +50,17 @@ export default function SidebarDemo({children}) {
       ),
     },
     {
-      label: "Prescriptions & Medication",
+      label: "Prescriptions",
       href: "/prescript",
       icon: (
         <IconMedicineSyrup className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Logs",
+      href: "/logs",
+      icon: (
+        <IconLogs className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
   ];
