@@ -29,28 +29,28 @@ export default function SidebarDemo({children}) {
       ),
     },
     {
-      label: "DEX",
+      label: "Data Permissions",
       href: "/credential",
       icon: (
         <IconDatabase className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Community",
+      label: "Support Group",
       href: "/dao",
       icon: (
         <IconBuildingCommunity className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Telehealth",
+      label: "'Tele'health",
       href: "/telehealth",
       icon: (
         <IconPhoneCall className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
-      label: "Prescriptions",
+      label: "Check Prescriptions",
       href: "/prescript",
       icon: (
         <IconMedicineSyrup className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
