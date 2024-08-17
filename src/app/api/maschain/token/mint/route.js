@@ -9,7 +9,7 @@ export async function POST(req) {
 			"content-type": "application/json",
 		},
 		body: JSON.stringify({
-			wallet_address: "0x62aB6f2aE657186dB838A5FAbe62DcbC51914384", // This should be the admin wallet that mints tokens
+			wallet_address: process.env.MASCHAIN_OWNER_ADDRESS, // This should be the admin wallet that mints tokens
 			to: walletAddress, // The user's wallet address
 			amount: amount,
 			contract_address: process.env.MASCHAIN_TOKEN_CONTRACT,
