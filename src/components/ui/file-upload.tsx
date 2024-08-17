@@ -73,7 +73,7 @@ export const FileUpload = ({
             Upload file
           </p>
           <p className="relative z-20 font-sans font-normal text-neutral-400 dark:text-neutral-400 text-base mt-2">
-            Drag and drop your image of medicine here to verify it's authenticity
+            {"Drag and drop your image of medicine here to verify it's authenticity"}
           </p>
           <div className="relative w-full mt-10 max-w-xl mx-auto">
             {files.length > 0 &&

@@ -43,7 +43,7 @@ export default function SidebarDemo({children}) {
     },
     {
       label: "Telehealth",
-      href: "/health",
+      href: "/telehealth",
       icon: (
         <IconPhoneCall className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),

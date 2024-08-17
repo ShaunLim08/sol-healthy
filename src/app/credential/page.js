@@ -19,7 +19,7 @@ export default function Credential() {
                   </tr>
                 </thead>
                 <tbody>
-                  {["Sunway Hospital Subang", "UM Specialist Center", "Colombia Hospital", "Gleneagles Hospital", "Hospital Serdang"].map((hospital, index) => (
+                  {["Sunway Medical Center", "UM Specialist Center", "Colombia Hospital", "Gleneagles Hospital", "Hospital Serdang", "Hospital Kajang"].map((hospital, index) => (
                     <tr key={index}>
                       <td className="border-b dark:border-neutral-600 p-4">{hospital}</td>
                       <td className="border-b dark:border-neutral-600 p-4">
@@ -50,6 +50,8 @@ export default function Credential() {
             </div>
           </div>
         </SidebarDemo>
+      </div>
+      <div className="rounded-tr-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1 p-4">
       </div>
     </>
   );
