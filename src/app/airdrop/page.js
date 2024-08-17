@@ -12,7 +12,7 @@ export default function Airdrop() {
     const response = await fetch("/api/maschain/token/mint", {
       method: "POST",
       body: JSON.stringify({
-        amount: 1000,
+        amount: "1000",
         walletAddress: localStorage.getItem("walletAddress"),
       }),
       headers: {
