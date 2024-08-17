@@ -3,6 +3,7 @@ import Image from "next/image";
 import SidebarDemo from "@/components/example/sidebar-demo";
 import HeroParallaxDemo from "@/components/example/hero-parallax-demo";
 import { useState, useRef, useEffect } from "react";
+import { toast } from "sonner";
 
 export default function Telehealth() {
   const [messageHistories, setMessageHistories] = useState({
@@ -65,17 +66,17 @@ export default function Telehealth() {
       console.error(error);
     }
   };
-  
+
   const generatePrescript = async (prompt, index) => {
     try {
       const response = await fetch("/api/maschain/audit/create-trail", {
         method: "POST",
         body: JSON.stringify({
-          "name" : "Prescript-" + index,
-          "data" : prompt.parts[0].text,
-          "entity_id" : new Date().now(),
-          "content" : prompt.parts[0].text,
-          "wallet_address": localStorage.getItem("wallet_address"),
+          name: "Prescript-" + index,
+          data: prompt.parts[0].text,
+          entity_id: "prescript-" + index,
+          content: prompt.parts[0].text,
+          wallet_address: localStorage.getItem("wallet_address"),
         }),
         headers: {
           "Content-Type": "application/json",
@@ -83,24 +84,23 @@ export default function Telehealth() {
       });
 
       if (response.ok) {
-        const newPrompt = await response.json();
-        setMessageHistories((prevHistories) => ({
-          history: [
-            ...prevHistories.history,
-            {
-              role: "user",
-              parts: [{ text: prompt }],
-            },
-            {
-              role: "model",
-              parts: [{ text: newPrompt }],
-            },
-          ],
-        }));
+        const data = await response.json();
+        toast.success("Prescript Trail generated successfully!", {
+          action: "View",
+          onClick: () => {
+            window.open(
+              "https://explorer-testnet.maschain.com/" +
+                data.result.transactionHash,
+              "_blank"
+            );
+          },
+        });
       } else {
-        throw new Error("Failed to fetch new prompt");
+        toast.error("Failed to create prescript trail");
+        throw new Error("Failed to create audit trail");
       }
     } catch (error) {
+      toast.error("Error creating prescript trail " + error);
       console.error(error);
     }
   };

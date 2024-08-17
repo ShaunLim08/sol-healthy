@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "p16-va.lemon8cdn.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   webpack: (config) => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FeaturesSectionDemo() {
+export default function FeaturesSectionDemo({grid}) {
   return (
     <div className="py-20 lg:py-40">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto">
@@ -38,38 +38,6 @@ export default function FeaturesSectionDemo() {
     </div>
   );
 }
-
-
-const grid = [
-  {
-    medicinename: "Aspirin",
-    batchnumber: "BATCH1234",
-    supplier: "Supplier A",
-    status: "Verified",
-    imageUrl: "https://rootofscience.com/blog/wp-content/uploads/2023/03/ubat-aspirin.jpg", 
-  },
-  {
-    medicinename: "Ibuprofen",
-    batchnumber: "BATCH5678",
-    supplier: "Supplier B",
-    status: "Pending Verification",
-    imageUrl: "https://5.imimg.com/data5/SELLER/Default/2023/6/319597573/MH/NE/SR/135658020/ibuprofen-400-mg-bp-tablets.jpg", 
-  },
-  {
-    medicinename: "Paracetamol",
-    batchnumber: "BATCH9012",
-    supplier: "Supplier C",
-    status: "Counterfeit Detected",
-    imageUrl: "https://guardian.com.my/media/catalog/product/1/2/121115012_axcel_pcm_500mg_tab_10sx10.jpg?auto=webp&format=pjpg&width=640&height=800&fit=cover",
-  },
-  {
-    medicinename: "Amoxicillin",
-    batchnumber: "BATCH3456",
-    supplier: "Supplier D",
-    status: "Verified",
-    imageUrl: "https://5.imimg.com/data5/ANDROID/Default/2023/4/302037696/HU/JI/VN/116627000/product-jpeg-500x500.jpg", 
-  }
-  ];
 
 export const Grid = ({ pattern, size }) => {
   const p = pattern ?? [

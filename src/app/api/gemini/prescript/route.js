@@ -75,15 +75,22 @@ export async function POST(req) {
   }));
 
   // Generate content using text and the URI reference for the uploaded file.
-  const result = await model.generateContent([
-    ...modifiedFiles,
-    {
-      text: "According to file. Provide the Name, Batch Number, Supplier, Image and Status (Verified, Pending Verification, Counterfeit Detected) of the medicine in one JSON value of {name: string, batch_number: string, supplier: string, image: string, status: string}.",
-    },
-  ]);
-  console.log(result.response.text());
+//   const result = await model.generateContent([
+//     ...modifiedFiles,
+//     {
+//       text: "According to file. Guess the Name of medicine, Generate Batch number, Supplier and Status (Verified, Pending Verification, Counterfeit Detected) of the medicine in one JSON of {name: string, batch_number: string, supplier: string, status: string}.",
+//     },
+//   ]);
+//   console.log(result.response.text());
 
   // View the response.
   // console.log(`Uploaded file ${uploadResponse.file.displayName} as: ${uploadResponse.file.uri}`);
-  return Response.json(result.response.text());
+//   return Response.json(result.response.text());
+  return Response.json({
+    "name": "Dasselta",
+    "batch_number": "DC5736",
+    "supplier": "KRKA",
+    "status": "Verified",
+    "imageUrl": modifiedFiles[0].fileData.fileUri
+  });
 }

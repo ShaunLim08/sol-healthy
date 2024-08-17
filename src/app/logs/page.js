@@ -5,8 +5,26 @@ import ExpandableCardDemo from "@/components/blocks/expandable-card-demo-grid";
 import { useEffect, useState } from "react";
 
 export default function Logs() {
-  const [trails, setTrails] = useState();
-  useEffect(() => {});
+  const [trails, setTrails] = useState([]);
+
+  async function getTrails() {
+    const response = await fetch("/api/maschain/audit/list-trail", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+        if (response.ok) {
+            const data = await response.json();
+            setTrails(data);
+        }
+  }
+
+
+  useEffect(() => {
+
+   getTrails();
+  });
 return (
     <div className="">
         <SidebarDemo>

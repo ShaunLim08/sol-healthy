@@ -1,7 +1,7 @@
 export async function POST(req) {
-    const { wallet_address, to, file, attributes, name, description } = await req.json();
+    const { to, file, attributes, name, description } = await req.json();
     const formData = new FormData();
-    formData.append("wallet_address", wallet_address);
+    formData.append("wallet_address", process.env.MASCHAIN_OWNER_ADDRESS);
     formData.append("to", to);
     formData.append("contract_address", process.env.MASCHAIN_CERTIFICATE_CONTRACT);
     formData.append("file", file);
