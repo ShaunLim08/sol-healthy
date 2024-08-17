@@ -80,7 +80,7 @@ const [grid, setGrid] = useState([
     if (response.ok) {
       const data = await response.json();
       console.log(data);
-      toast.success("Certificate minted successfully!"), {
+      toast.success("Certificate minted successfully!", {
         action: "View",
         onClick: () => {
           window.open(
@@ -89,7 +89,7 @@ const [grid, setGrid] = useState([
             "_blank"
           );
         },
-      };
+      });
     }
   }
 
