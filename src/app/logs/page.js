@@ -16,7 +16,7 @@ export default function Logs() {
       });
         if (response.ok) {
             const data = await response.json();
-            setTrails(data);
+            setTrails([...data.result]);
         }
   }
 
@@ -38,11 +38,11 @@ return (
                                 <p className="text-gray-500">{trail.description}</p>
                                 <div className="grid grid-cols-1 gap-4 mt-4">
                                     {trail.transactions.map((transaction) => (
-                                        <div key={transaction.id} className="p-2 border border-gray-300 rounded-md">
-                                            <h3 className="text-lg font-medium">{transaction.title}</h3>
-                                            <p className="text-gray-500">{transaction.description}</p>
-                                            <p className="text-gray-500">{transaction.date}</p>
-                                            <p className="text-gray-500">{transaction.amount}</p>
+                            <div key={transaction.id} className="p-2 border border-gray-300 rounded-md">
+                                            <h3 className="text-lg font-medium">{JSON.parse(transaction.metadata).name}</h3>
+                                            <p className="text-gray-500">{JSON.parse(transaction.metadata).data}</p>
+                                            <p className="text-gray-500">{JSON.parse(transaction.metadata).content}</p>
+                                            <p className="text-gray-500">{transaction.created_at}</p>
                                         </div>
                                     ))}
                                 </div>
