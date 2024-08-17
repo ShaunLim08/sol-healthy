@@ -32,19 +32,17 @@ return (
                 <div className="rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1">
                     <div className="p-4">
                         <h1 className="text-2xl font-bold">Trails</h1>
-                        {trails && trails.map((trail) => (
-                            <div key={trail.id} className="p-2 border border-gray-300 rounded-md">
-                                <h2 className="text-lg font-medium">{trail.name}</h2>
-                                <p className="text-gray-500">{trail.description}</p>
-                                <div className="grid grid-cols-1 gap-4 mt-4">
-                                    {trail.transactions.map((transaction) => (
+                        {trails && trails.map((transaction) => (
                             <div key={transaction.id} className="p-2 border border-gray-300 rounded-md">
-                                            <h3 className="text-lg font-medium">{JSON.parse(transaction.metadata).name}</h3>
+                                <h2 className="text-lg font-medium">{JSON.parse(transaction.metadata).name}</h2>
+                                <p className="text-gray-500">{JSON.parse(transaction.metadata).content}</p>
+                                <div className="grid grid-cols-1 gap-4 mt-4">
+                            <div key={transaction.id} className="p-2 border border-gray-300 rounded-md">
+                                            <h3 className="text-lg font-medium">{transaction.transactionHash}</h3>
                                             <p className="text-gray-500">{JSON.parse(transaction.metadata).data}</p>
-                                            <p className="text-gray-500">{JSON.parse(transaction.metadata).content}</p>
+                                            <p className="text-gray-500">{transaction.organisation_id}</p>
                                             <p className="text-gray-500">{transaction.created_at}</p>
                                         </div>
-                                    ))}
                                 </div>
                             </div>
                         ))}
