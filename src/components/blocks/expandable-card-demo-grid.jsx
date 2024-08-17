@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { toast } from "sonner";
 
 export default function ExpandableCardDemo() {
   const [active, setActive] = useState(null);
@@ -27,6 +28,43 @@ export default function ExpandableCardDemo() {
   }, [active]);
 
   useOutsideClick(ref, () => setActive(null));
+
+  const sendTip = async (amount) => {
+		// e.preventDefault();
+		try {
+			const response = await fetch("/api/maschain/token/transfer", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ amount: amount, walletAddress: localStorage.getItem("walletAddress") }),
+			});
+
+			if (response.ok) {
+				const data = await response.json();
+				console.log("API Response:", data); // Log the entire response for debugging
+			
+					toast.success("Transaction success!", {
+            action: {
+              label: 'View',
+              onClick: () => {
+                window.open(
+                  "https://explorer-testnet.maschain.com/" +
+                  data.result.transactionHash,
+                  "_blank"
+                );
+              }
+            },
+          });
+			} else {
+				const errorData = await response.json();
+				throw new Error(errorData.message || "Failed to transfer token");
+			}
+		} catch (error) {
+			console.error("Full error:", error);
+			toast.error("Error ctransfer token: " + error.message);
+		}
+	};
 
   return (<>
     <AnimatePresence>
@@ -94,8 +132,9 @@ export default function ExpandableCardDemo() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  href={active.ctaLink}
-                  target="_blank"
+                  onClick={() => sendTip("5")}
+                  // href={active.ctaLink}
+                  // target="_blank"
                   className="px-4 py-3 text-sm rounded-full font-bold bg-blue-500 text-white">
                   {active.ctaText}
                 </motion.a>

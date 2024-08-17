@@ -11,7 +11,7 @@ export async function POST(req) {
 		},
 		body: JSON.stringify({
 			wallet_address: walletAddress, // user's wallet address (you'll need to get this from the authenticated user)
-			to: "0xD001570E75b31f6764cCa245874a2fb13DA24eab",
+			to: process.env.MASCHAIN_VENDOR_ADDRESS,
 			amount: amount,
 			contract_address: process.env.MASCHAIN_TOKEN_CONTRACT,
 			callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/maschain/callback/fund-project`,
