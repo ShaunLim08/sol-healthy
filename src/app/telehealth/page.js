@@ -76,7 +76,7 @@ export default function Telehealth() {
           data: prompt.parts[0].text,
           entity_id: "prescript-" + index,
           content: prompt.parts[0].text,
-          wallet_address: localStorage.getItem("wallet_address"),
+          wallet_address: localStorage.getItem("walletAddress"),
         }),
         headers: {
           "Content-Type": "application/json",
@@ -142,7 +142,7 @@ export default function Telehealth() {
 
                           {index >= 2 && message.role === "model" && (
                             <button
-                              onClick={generatePrescript(message, index)}
+                              onClick={() => generatePrescript(message, index)}
                               className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-[#0070f3] rounded-md text-white font-light transition duration-200 ease-linear"
                             >
                               Generate Prescript
