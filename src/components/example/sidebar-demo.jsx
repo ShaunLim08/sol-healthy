@@ -17,7 +17,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import CreateMasWalletDialog from "../custom/create_wallet_dialog";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export default function SidebarDemo({children}) {
   const links = [
@@ -80,7 +80,7 @@ export default function SidebarDemo({children}) {
               <SidebarLink
                 link={{
                   label: (
-                    <CreateMasWalletDialog />
+                    <WalletMultiButton style={{}} />
                   ),
                   href: "",
                   icon: <IconWallet className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
@@ -97,17 +97,18 @@ export default function SidebarDemo({children}) {
     </div>
   );
 }
+
 export const Logo = () => {
   return (
     <Link
       href="#"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
-      <img src="/healthify-contrast.png"  className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0 bg-cover" />
+      <img src="/solhealthy-contrast.png"  className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0 bg-cover" />
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="font-medium text-black dark:text-white whitespace-pre">
-        Healthify
+        Sol-Healthy
       </motion.span>
     </Link>
   );
@@ -117,7 +118,7 @@ export const LogoIcon = () => {
     <Link
       href="#"
       className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20">
-      <img src="/healthify-contrast.png"  className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0 bg-cover" />
+      <img src="/solhealthy-contrast.png"  className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0 bg-cover" />
     </Link>
   );
 };

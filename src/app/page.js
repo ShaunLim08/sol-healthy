@@ -37,8 +37,8 @@ const Dashboard = () => {
     <div className="absolute w-full h-full backface-hidden rounded-lg flex items-center justify-center rotate-y-180 text-center">
       <span className="text-4xl font-bold text-white">
         <img
-          src="/healthify-contrast.png"
-          alt="Healthify Logo"
+          src="/solhealthy.png"
+          alt="Sol-Healthy Logo"
           className=" rounded-full border-8 border-slate-300 items-center shadow-xl "
         />
       </span>

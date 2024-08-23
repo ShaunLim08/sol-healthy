@@ -29,43 +29,6 @@ export default function ExpandableCardDemo() {
 
   useOutsideClick(ref, () => setActive(null));
 
-  const sendTip = async (amount) => {
-		// e.preventDefault();
-		try {
-			const response = await fetch("/api/maschain/token/transfer", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ amount: amount, walletAddress: localStorage.getItem("walletAddress") }),
-			});
-
-			if (response.ok) {
-				const data = await response.json();
-				console.log("API Response:", data); // Log the entire response for debugging
-			
-					toast.success("Transaction success!", {
-            action: {
-              label: 'View',
-              onClick: () => {
-                window.open(
-                  "https://explorer-testnet.maschain.com/" +
-                  data.result.transactionHash,
-                  "_blank"
-                );
-              }
-            },
-          });
-			} else {
-				const errorData = await response.json();
-				throw new Error(errorData.message || "Failed to transfer token");
-			}
-		} catch (error) {
-			console.error("Full error:", error);
-			toast.error("Error ctransfer token: " + error.message);
-		}
-	};
-
   return (<>
     <AnimatePresence>
       {active && typeof active === "object" && (
@@ -275,12 +238,12 @@ const cards = [
   {
     description: "Eeashann A/L Sivasankar",
     title: "Doctor Recommendation for Cancer Treatment",
-    src: "/doctor.jpg",
+    src: "/henry.png",
     ctaText: "Tip HEAL",
     // ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        (<p>Dr Yudhishthra from <b>Hospital Serdang</b> is a very good doctor. He is very patient and listens to your problems. 
+        (<p>Dr Henry from <b>Hospital Serdang</b> is a very good doctor. He is very patient and listens to your problems. 
           He also provides good advice and is very knowledgeable about breast cancer.
           Do look for him if you require any treatment for breast cancer.
                   </p>)

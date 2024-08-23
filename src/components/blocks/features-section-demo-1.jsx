@@ -1,5 +1,6 @@
 import React from "react";
 
+//prescription verification stuff
 export default function FeaturesSectionDemo({grid}) {
   return (
     <div className="py-20 lg:py-40">

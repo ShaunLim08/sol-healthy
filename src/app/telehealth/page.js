@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import SidebarDemo from "@/components/example/sidebar-demo";
-import HeroParallaxDemo from "@/components/example/hero-parallax-demo";
 import { useState, useRef, useEffect } from "react";
 import { toast } from "sonner";
 
@@ -16,7 +15,7 @@ export default function Telehealth() {
         role: "model",
         parts: [
           {
-            text: "Great to meet you. I am your personal companion on prescription",
+            text: "Nice to meet you. I am your personal companion on prescription",
           },
         ],
       },
@@ -67,44 +66,6 @@ export default function Telehealth() {
     }
   };
 
-  const generatePrescript = async (prompt, index) => {
-    try {
-      const response = await fetch("/api/maschain/audit/create-trail", {
-        method: "POST",
-        body: JSON.stringify({
-          name: "Prescript-" + index,
-          data: prompt.parts[0].text,
-          entity_id: "prescript-" + index,
-          content: prompt.parts[0].text,
-          wallet_address: localStorage.getItem("walletAddress"),
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        toast.success("Prescript Trail generated successfully!", {
-          action: "View",
-          onClick: () => {
-            window.open(
-              "https://explorer-testnet.maschain.com/" +
-                data.result.transactionHash,
-              "_blank"
-            );
-          },
-        });
-      } else {
-        toast.error("Failed to create prescript trail");
-        throw new Error("Failed to create audit trail");
-      }
-    } catch (error) {
-      toast.error("Error creating prescript trail " + error);
-      console.error(error);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputMessage.trim()) {
@@ -145,7 +106,7 @@ export default function Telehealth() {
                               onClick={() => generatePrescript(message, index)}
                               className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(0,118,255,0.9)] px-8 py-2 bg-[#0070f3] rounded-md text-white font-light transition duration-200 ease-linear"
                             >
-                              Generate Prescript
+                              Generate Prescription
                             </button>
                           )}
                         </div>

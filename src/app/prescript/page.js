@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import SidebarDemo from "@/components/example/sidebar-demo";
-import HeroParallaxDemo from "@/components/example/hero-parallax-demo";
 import { FileUpload } from "@/components/ui/file-upload";
 import FeaturesSectionDemo from "@/components/blocks/features-section-demo-1";
 import { useState } from "react";
@@ -60,38 +59,6 @@ const [grid, setGrid] = useState([
   const handleFileUpload = (files) => {
     setFiles(files);
   };
-
-  const mintCertificate = async (name, attribute, desc) => {
-
-    const response = await fetch("/api/maschain/certificate/mint", {
-      method: "POST",
-      body: JSON.stringify({
-        to: localStorage.getItem("walletAddress"),
-        file: "https://p16-va.lemon8cdn.com/tos-alisg-v-a3e477-sg/oMQBYAGAiCLAIIigyuOEtGofLx22CFe21EB8ux~tplv-tej9nj120t-origin.webp",
-        attributes: attribute,
-        name: name,
-        description: desc
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log(data);
-      toast.success("Certificate minted successfully!", {
-        action: "View",
-        onClick: () => {
-          window.open(
-            "https://explorer-testnet.maschain.com/" +
-              data.result.transactionHash,
-            "_blank"
-          );
-        },
-      });
-    }
-  }
 
   const predictPrescription = async () => {
     const reader = new FileReader();

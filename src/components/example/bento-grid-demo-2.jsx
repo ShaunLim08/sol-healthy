@@ -7,6 +7,7 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 
+//Main Page stuff
 export default function BentoGridSecondDemo() {
   return (
     (<BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
