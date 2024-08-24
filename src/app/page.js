@@ -6,6 +6,7 @@ import BentoGridDemo from "@/components/example/bento-grid-demo";
 import BentoGridSecondDemo from "@/components/example/bento-grid-demo-2";
 import ImagesSliderDemo from "@/components/example/images-slider-demo";
 
+
 const Dashboard = () => {
   return (
     <div className="flex flex-1">
